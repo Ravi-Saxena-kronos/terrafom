@@ -1,0 +1,88 @@
+body {
+    background-color: #0d0d0d;
+    color: #00ffe7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00ffe7;
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+    margin-bottom: 30px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffe7;
+    width: 350px;
+  }
+  
+  input {
+    background-color: #1c1c1c;
+    border: none;
+    border-bottom: 2px solid #00ffe7;
+    color: #ffffff;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid #ff00ff;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .create {
+    background: linear-gradient(to right, #00ffa1, #00ffee);
+    color: #000;
+    box-shadow: 0 0 10px #00ffa1, 0 0 20px #00ffee;
+  }
+  
+  .create:hover {
+    background: linear-gradient(to right, #00ffee, #00ffa1);
+  }
+  
+  .destroy {
+    background: linear-gradient(to right, #ff0066, #ff33cc);
+    color: #000;
+    box-shadow: 0 0 10px #ff0066, 0 0 20px #ff33cc;
+  }
+  
+  .destroy:hover {
+    background: linear-gradient(to right, #ff33cc, #ff0066);
+  }
+  
+  .flash {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    width: 350px;
+  }
+  

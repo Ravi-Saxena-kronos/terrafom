@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insphere Solution</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Insphere Solution</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'success' %}
+    <div class="flash" style="background-color: #00ffa1">{{ message }}</div>
+    {% elif category == 'danger' %}
+    <div class="flash" style="background-color: #ff0066">{{ message }}</div>
+    {% else %}
+    <div class="flash" style="background-color: #ffc107">{{ message }}</div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <form method="POST">
+      <input
+        type="text"
+        name="access_key"
+        placeholder="Enter Access Key"
+        required
+      />
+      <input
+        type="text"
+        name="secret_key"
+        placeholder="Enter Secret Key"
+        required
+      />
+      <input
+        type="text"
+        name="bucket_name"
+        placeholder="Enter S3 Bucket Name"
+        required
+      />
+      <input
+        type="text"
+        name="region"
+        placeholder="Enter AWS Region (e.g. ap-south-1)"
+        required
+      />
+
+      <button type="submit" name="action" value="create" class="create">
+        Create
+      </button>
+      <button type="submit" name="action" value="destroy" class="destroy">
+        Destroy
+      </button>
+    </form>
+
+    {% if outputs %}
+    <h2>Terraform Outputs</h2>
+    <table>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      {% for key, value in outputs.items() %}
+      <tr>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <br />
+    <a href="{{ url_for('download', fmt='csv') }}">Download CSV</a> |
+    <a href="{{ url_for('download', fmt='pdf') }}">Download PDF</a>
+    {% endif %}
+  </body>
+</html>
